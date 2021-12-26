@@ -2,6 +2,7 @@ const { StatusCodes } = require('http-status-codes');
 
 const router = require('express').Router();
 const Abiturient = require('./abiturient.model.js')
+const Exam = require('../exam/exam.model')
 
 const abiturientsService = require('./abiturient.service.js');
 const catchErrors = require('../../common/catchErrors');
@@ -80,5 +81,21 @@ router.route('/:id').delete(
       .json({ code: 'ABITURIENT_DELETED', msg: 'The abiturient has been deleted' });
   })
 );
+
+router.route('/:abiturientID/exams').get(
+    catchErrors(async (req, res) => {
+      const { abiturientID } = req.params;
+  
+      const exam = await abiturientsService.getExamsByAbiturientId(abiturientID);
+  
+      if (exam) {
+        res.json(exam.map(Exam.toResponse));
+      } else {
+        res
+          .status(StatusCodes.NOT_FOUND)
+          .json({ code: 'ABITURIENT_NOT_CREATE', msg: 'ABITURIENT not found' });
+      }
+    })
+  );
 
 module.exports = router;
