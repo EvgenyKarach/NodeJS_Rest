@@ -9,7 +9,7 @@
 ## Downloading
 
 ```
-git clone {repository URL}
+git clone https://github.com/EvgenyKarach/NodeJS_Rest/tree/task4/logging-error-handling
 ```
 
 ## Installing NPM modules
