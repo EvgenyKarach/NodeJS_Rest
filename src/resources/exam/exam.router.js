@@ -5,7 +5,7 @@ const Exam = require('./exam.model.js');
 
 const examsService = require('./exam.service.js');
 const catchErrors = require('../../common/catchErrors');
-
+const Teacher = require('../teacher/teacher.model');
 
 router.route('/').get(
   catchErrors(async (req, res) => {
@@ -82,4 +82,20 @@ router.route('/:id').delete(
   })
 );
 
+router.route('/:examId/teachers').get(
+    catchErrors(async (req, res) => {
+      const { examId } = req.params;
+  
+      const teachers = await examsService.getTeachersByExamId(examId);
+  
+      if (teachers) {
+        res.json(Teacher.toResponse(teachers));
+      } else {
+        res
+          .status(StatusCodes.NOT_FOUND)
+          .json({ code: 'EXAM_NOT_CREATE', msg: 'Exam not found' });
+      }
+    })
+  );
+  
 module.exports = router;

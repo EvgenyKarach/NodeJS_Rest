@@ -1,5 +1,5 @@
 const ExamsRepo = require('./exam.memory.repository');
-
+const TeacherRepo = require('../teacher/teacher.memory.repository')
 
 const getAll = () => ExamsRepo.getAll();
 
