@@ -1,0 +1,5 @@
+2021-12-26 22:54:01 info: GET /exams 304 {} {} {} - 1.119 ms
+2021-12-26 22:57:24 error: GET /abiturients 404 - 2.280 ms - Not Found
+2021-12-26 22:57:29 error: GET /abiturient 404 - 0.736 ms - Not Found
+2021-12-26 22:58:51 info: GET /students 304 {} {} {} - 0.805 ms
+2021-12-26 23:06:52 info: GET /exams 304 {} {} {} - 0.483 ms
