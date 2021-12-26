@@ -4,7 +4,7 @@ const router = require('express').Router();
 const Exam = require('./exam.model.js');
 
 const examsService = require('./exam.service.js');
-const catchErrors = require('../../common/catchErrors');
+const catchErrors = require('../../common/catchErrors.js');
 const Teacher = require('../teacher/teacher.model');
 
 router.route('/').get(

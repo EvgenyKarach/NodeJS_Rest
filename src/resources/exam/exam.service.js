@@ -1,10 +1,11 @@
-const ExamsRepo = require('./exam.memory.repository');
-const TeacherRepo = require('../teacher/teacher.memory.repository')
+const ExamsRepo = require('./exam.memory.repositiry.js');
+const TeacherRepo = require('../teacher/teacher.memory.repository.js')
 
 const getAll = () => ExamsRepo.getAll();
 
 const getById = (id) => ExamsRepo.getById(id);
 
+const getTeachersByExamId = async (examId) => TeacherRepo.getTeacherByExamId(await ExamsRepo.getTeacherIdByExamId(examId))
 
 const createExam = ({abiturientID, teacherID, date, score }) =>
   ExamsRepo.createExam({ abiturientID, teacherID, date, score });

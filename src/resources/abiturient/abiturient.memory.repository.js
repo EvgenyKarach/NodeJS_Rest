@@ -1,4 +1,4 @@
-const Abiturient = require('./abiturient.model');
+const Abiturient = require('../abiturient/abiturient.model.js');
 
 const Aditurients = [
   new Abiturient({ lastName: 'Karach', firstName: 'Evgeny', numCertificate: 948352 }),
