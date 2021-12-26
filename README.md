@@ -9,7 +9,7 @@
 ## Downloading
 
 ```
-git clone {repository URL}
+git clone https://github.com/EvgenyKarach/NodeJS_Rest/tree/task2/express-rest-service
 ```
 
 ## Installing NPM modules
