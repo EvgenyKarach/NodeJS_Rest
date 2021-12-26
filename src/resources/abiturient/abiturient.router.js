@@ -3,6 +3,7 @@ const { StatusCodes } = require('http-status-codes');
 const router = require('express').Router();
 const Abiturient = require('./abiturient.model.js')
 
+const abiturientsService = require('./abiturient.service.js');
 const catchErrors = require('../../common/catchErrors');
 
 router.route('/').get(
