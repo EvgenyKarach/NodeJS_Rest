@@ -1,4 +1,4 @@
-import { errorHandler } from './errorHandler';
+import { errorHandler } from './errorHandlerr';
 import { successHttpLogger, errorHttpLogger } from './morganMiddleware'
 import { uncaughtException, unhandledRejection } from './uncaughtHandler'
 
